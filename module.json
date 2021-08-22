@@ -1,0 +1,33 @@
+{
+  "name": "fbl-automated-battle",
+  "title": "Forbidden Lands - Automated Battle",
+  "description": "A Forbidden Lands battle automation module for FoundryVTT",
+  "author": "Ju Dantas (narukaioh)",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "0.8.8",
+  "scripts": [
+    "scripts/automated-battle.js"
+  ],
+  "dependencies": [
+    {
+      "name": "forbidden-lands",
+      "type": "system"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en-us.json"
+    },
+    {
+      "lang": "pt-br",
+      "name": "Portuguese (Brazil)",
+      "path": "lang/pt-br.json"
+    }
+  ],
+  "system": [
+    "forbidden-lands"
+  ]
+}

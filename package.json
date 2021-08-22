@@ -1,0 +1,21 @@
+{
+  "name": "fbl-automated-battle",
+  "version": "1.0.0",
+  "description": "A Forbidden Lands battle automation module for FoundryVTT",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "forbidden",
+    "lands",
+    "fbl",
+    "automation",
+    "battle"
+  ],
+  "author": "Ju Dantas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
