@@ -3,11 +3,22 @@
   "title": "Forbidden Lands - Automated Battle",
   "description": "A Forbidden Lands battle automation module for FoundryVTT",
   "author": "Ju Dantas (narukaioh)",
+  "authors": [
+    {
+      "name": "Ju Dantas (narukaioh)",
+      "discord": "Ju Dantas#0951"
+    }
+  ],
   "version": "1.0.0",
   "minimumCoreVersion": "0.8.8",
   "compatibleCoreVersion": "0.8.8",
   "scripts": [
-    "scripts/automated-battle.js"
+    "./automated-battle.js",
+    "./scripts/forbidden-lands/message.js"
+  ],
+  "esmodules": [
+    "./automated-battle.js",
+    "./scripts/forbidden-lands/message.js"
   ],
   "dependencies": [
     {
@@ -23,7 +34,7 @@
     },
     {
       "lang": "pt-br",
-      "name": "Portuguese (Brazil)",
+      "name": "Português (Brasil)",
       "path": "lang/pt-br.json"
     }
   ],
