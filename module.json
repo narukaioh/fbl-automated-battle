@@ -11,14 +11,12 @@
   ],
   "version": "1.0.0",
   "minimumCoreVersion": "0.8.8",
-  "compatibleCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "0.8.9",
   "scripts": [
-    "./automated-battle.js",
-    "./scripts/forbidden-lands/message.js"
+    "./automated-battle.js"
   ],
   "esmodules": [
-    "./automated-battle.js",
-    "./scripts/forbidden-lands/message.js"
+    "./automated-battle.js"
   ],
   "dependencies": [
     {

@@ -5,28 +5,20 @@ const isRollingAttack = msg => {
   return false
 }
 
-const getActorIdByTokenId = (id) => game.actors.tokens[id].id
-
-const getUserIdByActorId = (id) => game.users.find(user => user?.character?.id === id).id
-
-const getUserIdsByTokensId = (tokensId) => {
-  const actorsId = tokensId.map(tokenId => getActorIdByTokenId(tokenId))
-  return actorsId.map(id => getUserIdByActorId(id))
-}
-
-Hooks.on("createChatMessage", async (message) => {
-  if (isRollingAttack(message)) {
-    const usersIds = getUserIdsByTokensId(message.user.targets.ids)
-    usersIds.forEach(userId => {
-      if (game.users.get(userId).active) {
-        const data = {
-          title: "title example",
-          speaker: message.data.speaker,
-          content: "content example",
-          whisper: [userId]
-        }
-        ChatMessage.create(data, {})
-      }
-    })
-  }
+Hooks.on("renderChatMessage", (message) => {
+  console.log({ message })
+  // if (isRollingAttack(message) && message.data.content !== "content example") {
+  //   const usersIds = game.users.filter(user =>
+  //     [...game.user.targets].map(t =>
+  //       game.actors.tokens[t.id].id
+  //     ).includes(user.data.character))
+  //     .map(user => user.id)
+  //   const data = {
+  //     title: "title example",
+  //     speaker: message.data.speaker,
+  //     content: "content example",
+  //     whisper: usersIds
+  //   }
+  //   setTimeout(() => { ChatMessage.create(data, {}) }, 3000)
+  // }
 })
