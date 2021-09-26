@@ -5,20 +5,23 @@ const isRollingAttack = msg => {
   return false
 }
 
+Hooks.on("createChatMessage", (message) => {
+  if (isRollingAttack(message)) {
+    const usersIds = game.users.filter(user =>
+      [...game.user.targets].map(t =>
+        game.actors.tokens[t.id].id
+      ).includes(user.data.character))
+      .map(user => user.id)
+    const data = {
+      title: "title example",
+      speaker: message.data.speaker,
+      content: `<div class="flex"><button class="fbl-button automated-dodge">Dodge</button> or <button class="fbl-button automated-parry">Parry</button></div>`,
+      whisper: usersIds
+    }
+    setTimeout(() => { ChatMessage.create(data, {}) }, 2000)
+  }
+})
+
 Hooks.on("renderChatMessage", (message) => {
-  console.log({ message })
-  // if (isRollingAttack(message) && message.data.content !== "content example") {
-  //   const usersIds = game.users.filter(user =>
-  //     [...game.user.targets].map(t =>
-  //       game.actors.tokens[t.id].id
-  //     ).includes(user.data.character))
-  //     .map(user => user.id)
-  //   const data = {
-  //     title: "title example",
-  //     speaker: message.data.speaker,
-  //     content: "content example",
-  //     whisper: usersIds
-  //   }
-  //   setTimeout(() => { ChatMessage.create(data, {}) }, 3000)
-  // }
+  $(".automated-dodge").css("border", "1px solid red !important")
 })

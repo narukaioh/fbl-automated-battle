@@ -15,9 +15,6 @@
   "scripts": [
     "./automated-battle.js"
   ],
-  "esmodules": [
-    "./automated-battle.js"
-  ],
   "dependencies": [
     {
       "name": "forbidden-lands",
